@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Registration.css"/>
+  <title>Student Registration</title>
+  
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo"><img src="TheLogo.png" alt="Logo"/></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Register</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Registration Form -->
+  <div class="container">
+    <div class="heading">Student Registration</div>
+
+    <form id="registrationForm">
+      <div class="input-bar">
+        <input type="text" id="fullname" name="fullname" class="input-field" required>
+        <label class="label" for="fullname">Full Name</label>
+      </div>
+
+      <div class="input-bar">
+        <input type="email" id="email" name="email" class="input-field" required>
+        <label class="label" for="email">Email</label>
+      </div>
+
+      <div class="input-bar">
+        <select id="grade" name="grade" class="input-field" required>
+          <option value="" disabled selected>Select Grade</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <label class="label" for="grade">Grade Level</label>
+      </div>
+
+      <div class="input-bar">
+        <select id="gender" name="gender" class="input-field">
+          <option value="" disabled selected>Select Gender </option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <label class="label" for="gender">Gender</label>
+      </div>
+
+      <div class="butt">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+
+      <div id="confirmation"></div>
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('registrationForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('fullname').value;
+      confirmation.textContent = `Thank you, ${name}, but this page is a demo and can't handle data in the backend'`;
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
